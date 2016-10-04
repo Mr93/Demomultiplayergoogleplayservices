@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="firstColor">#3F51B5</color>
+    <color name="secondColor">#25c974</color>
+    <color name="thirdColor">#FF4081</color>
+    <color name="fourthColor">#e2c508</color>
+    <color name="fiveThColor">#d93311</color>
+    <color name="sixThColor">#e68a12</color>
+    <color name="sevenThColor">#000000</color>
+    <color name="eightThColor">#00370a</color>
+    <color name="backgroundChatScreen">#797979</color>
+    <color name="backgroundChatInput">#9f9f9f</color>
+</resources>
