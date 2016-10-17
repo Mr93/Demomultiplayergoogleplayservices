@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Demo multi player google play services</string>
+    <string name="app_id">845358504535</string>
+    <string name="signin_failure">Error</string>
 </resources>

@@ -27,14 +27,29 @@
         android:layout_height="50dp"
         android:layout_above="@+id/editText"
         android:text="aaaaa"
-        android:background="@color/backgroundChatScreen"/>
+        android:background="@color/backgroundChatScreen"
+        android:layout_toLeftOf="@+id/buttonSend"
+        android:layout_toStartOf="@+id/buttonSend"/>
     />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="bbbbbbb"
-        android:background="@color/backgroundChatInput"/>
+        android:background="@color/backgroundChatInput"
+        android:layout_toLeftOf="@+id/buttonSend"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:text="Send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonSend"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/gridView"/>
 </RelativeLayout>

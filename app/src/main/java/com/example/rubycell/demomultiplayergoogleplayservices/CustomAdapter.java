@@ -60,8 +60,12 @@ public class CustomAdapter extends BaseAdapter {
 			return context.getResources().getColor(R.color.sixThColor);
 		}else if(colorCode == 6){
 			return context.getResources().getColor(R.color.sevenThColor);
-		} else {
+		} else if (colorCode == 7) {
 			return context.getResources().getColor(R.color.eightThColor);
+		}else {
+			return context.getResources().getColor(R.color.backgroundChatInput);
 		}
 	}
+
+
 }
