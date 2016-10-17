@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "794834001465",
+    "firebase_url": "https://test-multiplayer-df48e.firebaseio.com",
+    "project_id": "test-multiplayer-df48e",
+    "storage_bucket": "test-multiplayer-df48e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794834001465:android:9f51775d8962622f",
+        "android_client_info": {
+          "package_name": "com.rubycell.game.bunnyjump.wow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794834001465-8186128o742vhj45an2qnk3hi0pi0b06.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rubycell.game.bunnyjump.wow",
+            "certificate_hash": "97D30A0561ABD9E071FA50E09EF1BAB9CDCF891B"
+          }
+        },
+        {
+          "client_id": "794834001465-dhlso868k6vmokumirs6qhrgvtktmnna.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoVUQJs8a0sAAHVGMXXbLU-2DgrSLU7yk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794834001465-dhlso868k6vmokumirs6qhrgvtktmnna.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
