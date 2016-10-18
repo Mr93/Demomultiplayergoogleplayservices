@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.Games;
@@ -60,7 +62,7 @@ public class TestActivity extends AppCompatActivity
 
 	private static final String TAG = MenuActivity.class.getSimpleName();
 	private static final int RC_WAITING_ROOM = 10002;
-	Button btnInvite, btnShowInvitation, btnQuick, btnJoin;
+	Button btnInvite, btnShowInvitation, btnQuick, btnJoin, btnPing;
 
 	//are we already playing?
 	boolean mPlaying = false;
@@ -83,6 +85,7 @@ public class TestActivity extends AppCompatActivity
 	ArrayList<Integer> listPing;
 	ArrayList<Integer> listTotalPing;
 	int hostIndex = -1;
+	MaterialDialog materialDialog;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,10 +95,12 @@ public class TestActivity extends AppCompatActivity
 		btnShowInvitation = (Button) findViewById(R.id.btn_show_invite);
 		btnJoin = (Button) findViewById(R.id.btn_show_join);
 		btnQuick = (Button) findViewById(R.id.btn_quick);
+		btnPing = (Button) findViewById(R.id.buttonPing);
 		btnInvite.setOnClickListener(this);
 		btnShowInvitation.setOnClickListener(this);
 		btnQuick.setOnClickListener(this);
 		btnJoin.setOnClickListener(this);
+		btnPing.setOnClickListener(this);
 		findViewById(R.id.sign_in_button).setOnClickListener(this);
 		findViewById(R.id.sign_out_button).setOnClickListener(this);
 		createClientAccessPlayGameServices();
@@ -209,14 +214,17 @@ public class TestActivity extends AppCompatActivity
 				}
 				break;
 			case R.id.buttonSend:
-				getPing();
-				getPinged = true;
-
-				/*sentData(-1, ((EditText) findViewById(R.id.editText)).getText().toString(), myIndex);
+				sentData(-1, ((EditText) findViewById(R.id.editText)).getText().toString(), myIndex);
 				TextView textView = (TextView) findViewById(R.id.textView);
 				textView.setText(textView.getText() + "\n Player" + myIndex + ": "
 						+ ((EditText) findViewById(R.id.editText)).getText().toString());
-				((EditText) findViewById(R.id.editText)).setText("");*/
+				((EditText) findViewById(R.id.editText)).setText("");
+				break;
+			case R.id.buttonPing:
+
+				getPing();
+				getPinged = true;
+				break;
 			default:
 				break;
 		}
@@ -422,6 +430,7 @@ public class TestActivity extends AppCompatActivity
 				if(temp.contains("myping")){
 					if(!getPinged){
 						getPing();
+						getPinged = true;
 					}
 					responsePing(temp.replace("myping",""), realTimeMessage.getSenderParticipantId());
 				}else if(temp.contains("responsePing")){
@@ -447,6 +456,7 @@ public class TestActivity extends AppCompatActivity
 								}
 							}
 							textView.setText(textView.getText() +"\n" + "Host index " + hostIndex);
+							materialDialog.dismiss();
 						}
 						sentMyTotalPing(valueTmp);
 						textView.setText(textView.getText() +"\n" + "my total ping " + valueTmp);
@@ -469,6 +479,7 @@ public class TestActivity extends AppCompatActivity
 							}
 						}
 						textView.setText(textView.getText() +"\n" + "Host index " + hostIndex);
+						materialDialog.dismiss();
 					}
 				}else if (temp.contains("chat")){
 					textView = (TextView) findViewById(R.id.textView);
@@ -735,6 +746,12 @@ public class TestActivity extends AppCompatActivity
 			}
 		}*/
 
+		materialDialog = new MaterialDialog.Builder(this)
+				.title("Define host")
+				.content("Ping-ing")
+				.progress(true, 0)
+				.progressIndeterminateStyle(true)
+				.show();
 		if(totalPingHad == mParticipants.size()){
 			totalPingHad = 0;
 		}

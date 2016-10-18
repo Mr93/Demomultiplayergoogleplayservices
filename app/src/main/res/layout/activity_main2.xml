@@ -123,14 +123,23 @@
             android:layout_alignParentStart="true"/>
 
         <Button
+            android:text="Ping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonPing"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            />
+
+        <Button
             android:text="Send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonSend"
+            android:layout_below="@+id/gridView"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/gridView"/>
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
 
