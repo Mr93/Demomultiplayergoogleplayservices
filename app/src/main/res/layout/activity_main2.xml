@@ -103,12 +103,13 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_above="@+id/editText"
             android:background="@color/backgroundChatScreen"
             android:layout_toLeftOf="@+id/buttonSend"
             android:layout_toStartOf="@+id/buttonSend"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical"
+            android:maxLines="5"/>
         />
 
         <EditText
